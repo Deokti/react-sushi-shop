@@ -1,6 +1,7 @@
 export type TypeInitialState = {
   sushiList: Array<TypeOneSushiServer>,
-  category: Array<TypeOneCategory>
+  categories: Array<TypeOneCategory>
+  currentCategory: string
 };
 
 export type TypeOneCategory = {
@@ -10,7 +11,7 @@ export type TypeOneCategory = {
 };
 
 export type TypeCategoryProps = {
-  category: Array<TypeOneCategory>,
+  categories: Array<TypeOneCategory>,
   currentCategory: string,
   toggleCurrentCategory(category: string | undefined): void
 };

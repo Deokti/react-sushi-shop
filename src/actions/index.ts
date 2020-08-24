@@ -1,5 +1,6 @@
-import { categoryReady } from './actions';
+import { toggleCurrentCategory, sushiListLoaded } from './actions';
 
 export {
-  categoryReady
+  toggleCurrentCategory,
+  sushiListLoaded
 }
