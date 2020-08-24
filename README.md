@@ -1,7 +1,5 @@
 # React Sushi Shop
 
----
-
 ## Информация
 
 Все данные, включая картинки и цены позаимствованы с [Суши Маркет](https://zheleznogorsk.sushi-market.com/ )

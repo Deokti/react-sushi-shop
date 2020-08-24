@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecb64ec8-2ea8-4c9b-9968-8c4e9d78b3ec" name="Default Changelist" comment="" />
+    <list default="true" id="ecb64ec8-2ea8-4c9b-9968-8c4e9d78b3ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/reducer.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gVyRRGGJ3H0xkrN5Twnof1cDYu" />
   <component name="ProjectViewState">
@@ -41,7 +49,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598214085881</updated>
-      <workItem from="1598214094434" duration="28642000" />
+      <workItem from="1598214094434" duration="28941000" />
+      <workItem from="1598250691925" duration="177000" />
+      <workItem from="1598256553242" duration="100000" />
     </task>
     <servers />
   </component>
