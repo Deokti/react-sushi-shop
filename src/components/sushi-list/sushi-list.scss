@@ -1,0 +1,9 @@
+.sushi-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  padding-left: 0;
+  list-style: none;
+}
