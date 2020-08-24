@@ -4,7 +4,8 @@
 
 ## Информация
 
-Все данные, включая картинки и цены позаимствованы с [Суши Маркет](https://zheleznogorsk.sushi-market.com/ )
+Все данные, включая картинки и цены позаимствованы с [Суши Маркет](https://zheleznogorsk.sushi-market.com/)
+
 Дизайн позаимствован с канала [Archakov Blog](https://www.youtube.com/c/ArchakovBlog/videos
 ), в частности с видео [React Pizza](https://www.youtube.com/watch?v=bziVFvq8cLQ&list=PL0FGkDGJQjJFMRmP7wZ771m1Nx-m2_qXq&index=2&t=0s)
 
