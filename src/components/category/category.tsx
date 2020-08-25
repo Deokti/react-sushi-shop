@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {TypeCategoryProps, TypeOneCategory} from "../../types";
+import {TypeCategoryProps, TypeOneCategoryAndSorting} from "../../types";
 
 import './category.scss';
 import {toggleCurrentCategory} from "../../actions";
@@ -15,7 +15,7 @@ const Category: (props: TypeCategoryProps) => JSX.Element = (props: TypeCategory
   return (
     <ul className="category">
     {
-      categories.map((category: TypeOneCategory) => {
+      categories.map((category: TypeOneCategoryAndSorting) => {
          const { id, label, name } = category;
          const addClass = name === currentCategory ? 'category-item--active' : '';
          return <li key={id}

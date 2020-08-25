@@ -13,3 +13,17 @@ export const sushiListLoaded = (newSushiList: Array<TypeOneSushiServer>) => {
     payload: newSushiList,
   }
 }
+
+export const toggleSortingActivePopup = (newStatePopup: boolean) => {
+  return {
+    type: 'SORTING_ACTIVE_POPUP',
+    payload: newStatePopup,
+  }
+}
+
+export const toggleCurrentSorting = (newSorting: string) => {
+  return {
+    type: 'CURRENT_SORTING',
+    payload: newSorting,
+  }
+}

@@ -23,8 +23,11 @@ body {
     padding: 5rem 8rem;
   }
   &-content {
+    padding-top: 8rem;
     &-top {
-      padding-top: 8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     &-bottom {
       padding-top: 4rem;

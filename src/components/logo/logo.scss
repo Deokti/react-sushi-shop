@@ -1,0 +1,23 @@
+@import "../../assets/styles/variables";
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  &__description {
+    padding-left: 1rem;
+  }
+  &__title {
+    font-size: 2.3rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #181818;
+    font-weight: 900;
+    margin-bottom: 0;
+  }
+  &__subtitle {
+    font-size: 1.3rem;
+    color: $description-color;
+    text-transform: lowercase;
+  }
+}

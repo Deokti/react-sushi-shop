@@ -2,9 +2,12 @@ import React from "react";
 
 import Header from "../header";
 
+import { Route } from 'react-router-dom';
+
 import './app.scss';
-import Category from "../category/category";
-import SushiList from "../sushi-list/sushi-list";
+
+import ShopPage from "../pages/shop-page";
+import CartPage from "../pages/cart-page";
 
 const App: React.FC = () => {
   return (
@@ -13,12 +16,9 @@ const App: React.FC = () => {
         <div className="app__wrapper">
           <Header />
 
-          <div className="app-content-top">
-            <Category />
-          </div>
-
-          <div className="app-content-bottom">
-            <SushiList />
+          <div className="app-content">
+            <Route exact path='/' component={ShopPage} />
+            <Route path="/cart-page" component={CartPage} />
           </div>
         </div>
       </div>
