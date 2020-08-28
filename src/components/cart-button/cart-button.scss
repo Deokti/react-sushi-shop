@@ -29,4 +29,10 @@
     padding-left: .5rem;
   }
   &:hover { background-color: $color-for-hover; }
+  &__price,
+  &__line,
+  &__ordered,
+  &__amount {
+    pointer-events: none;
+  }
 }

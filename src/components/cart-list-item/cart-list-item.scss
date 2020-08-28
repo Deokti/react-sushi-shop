@@ -1,0 +1,90 @@
+@import '../../assets/styles/variables';
+
+.cart-list-item {
+  display: flex;
+  align-items: center;
+  min-height: 6.9rem;
+  margin-bottom: 3rem;
+  &__information {
+    width: 50%;
+    display: flex;
+  }
+  &__image {
+    max-width: 6.9rem;
+    width: 100%;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding-left: 2.1rem;
+    letter-spacing: 0.015rem;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  &__counter {
+    width: 25%;
+    display: flex;
+    align-items: center;
+  }
+  &__amount {
+    padding: 0 1.2rem;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #000000;
+  }
+  &__price {
+    width: 20%;
+    font-weight: bold;
+    font-size: 2.1rem;
+    color: #000000;
+  }
+  &__button {
+    position: relative;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: .2rem solid #C93756;
+    background-color: transparent;
+    border-radius: 50%;
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: .3rem;
+      width: 1.2rem;
+      height: .2rem;
+      background-color: $default-color-element;
+    }
+    &--plus {
+      &::after { transform: translate(-50%, -50%) rotate(90deg); }
+    }
+    &--plus, &--minus {
+      &:hover {
+        border-color: $color-for-hover;
+        &::after, &::before {
+          background-color: $color-for-hover;
+        }
+      }
+    }
+    &--delete {
+      border-color: $button-delete;
+      margin-left: auto;
+      &::after, &::before {
+        background-color: $button-delete;
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &:hover {
+        border-color: $description-color;
+        &::after, &::before {
+          background-color: $description-color;
+        }
+      }
+    }
+  }
+}

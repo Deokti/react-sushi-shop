@@ -17,8 +17,8 @@ const App: React.FC = () => {
           <Header />
 
           <div className="app-content">
-            <Route exact path='/' component={ShopPage} />
-            <Route path="/cart-page" component={CartPage} />
+            <Route exact path='/' component={ ShopPage } />
+            <Route path="/cart-page" component={ CartPage } />
           </div>
         </div>
       </div>

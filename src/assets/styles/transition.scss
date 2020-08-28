@@ -1,6 +1,11 @@
 .header-cart,
 .category-item,
 .sushi-list-item__button,
-.sorting-selector {
+.sorting-selector,
+.cart-list-item__button,
+.cart-list-item__button::after,
+.cart-list-item__button::before,
+.cart-list__button,
+.cart-list__button svg path {
   transition: all .3s ease-in-out;
 }

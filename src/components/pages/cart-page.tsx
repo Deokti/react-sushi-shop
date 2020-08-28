@@ -1,8 +1,8 @@
 import React from "react";
-import SushiCart from "../sushi-cart";
+import CartList from "../cart-list";
 
 const CartPage = () => {
-  return <SushiCart />
+  return <CartList />
 };
 
 export default CartPage;

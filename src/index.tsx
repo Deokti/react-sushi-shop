@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 
 import App from "./components/App";
 import { SushiShopServiceProvider } from './components/sushi-shop-service-contex';
@@ -14,7 +14,9 @@ ReactDOM.render(
   <Provider store={store}>
     <SushiShopServiceProvider value={sushiShopService}>
      <BrowserRouter>
-       <App />
+       <Switch>
+        <App />
+       </Switch>
      </BrowserRouter>
     </SushiShopServiceProvider>
   </Provider>,
