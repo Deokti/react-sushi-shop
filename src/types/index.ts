@@ -56,3 +56,9 @@ export type TypeCartButtonProps = {
   price: number
   amount: number,
 }
+
+export type SusiListMapStateToProps = {
+  sushiList: Array<TypeOneSushiServer>,
+  currentCategory: string,
+  currentSorting: string
+}

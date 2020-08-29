@@ -23,11 +23,11 @@ const Sorting = (props: TypeSortingProps) => {
     toggleSortingActivePopup(false);
   }
 
-  const onClickNotSorting = (event: any) => {
+  const onClickNotSorting = useCallback((event: any) => {
     if (sortingElementRef && !event.path.includes(sortingElementRef.current)) {
       toggleSortingActivePopup(false);
     }
-  }
+  }, [sortingElementRef, toggleSortingActivePopup])
 
   useEffect(() => {
     document.body.addEventListener('click', onClickNotSorting);
