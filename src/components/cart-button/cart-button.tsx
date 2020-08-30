@@ -1,13 +1,10 @@
 import React from "react";
-import {TypeCartButtonProps} from "../../types";
 
 import './cart-button.scss';
 
-const CartButton = (props: TypeCartButtonProps) => {
-  const { price, amount } = props;
-
+const CartButton = ({price, amount}: { price: number, amount: number }) => {
   return (
-    <div className="cart-button">
+    <div className="cart-button" title="Перейти в корзину">
       <span className="cart-button__price">{price} ₽</span>
       <span className="cart-button__line" />
       <span className="cart-button__ordered">

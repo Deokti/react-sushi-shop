@@ -5,7 +5,7 @@ import './logo.scss';
 
 const Logo = () => {
   return (
-    <div className="logo">
+    <div className="logo" title="Перейти на главную страницу">
       <img src={logo} alt="Роллы"/>
 
       <div className="logo__description">

@@ -5,6 +5,7 @@ import { sushiAddedToCart, allSushiRemoveFromCart, sushiRemoveFromCart } from ".
 
 import './cart-list.scss';
 import { connect } from "react-redux";
+import { CartOneSushi } from "../../types";
 
 const CartList = ({ cartList, onIncrement, onDecrement, onDelete }: any) => {
   return (
@@ -48,7 +49,7 @@ const CartList = ({ cartList, onIncrement, onDecrement, onDelete }: any) => {
 };
 
 
-const mapStateToProps = ({ shoppingCart: { cartList } }: any) => {
+const mapStateToProps = ({ shoppingCart: { cartList } }: { shoppingCart: { cartList: CartOneSushi } }) => {
   return { cartList };
 }
 

@@ -1,19 +1,8 @@
-export type TypeInitialState = {
-  arrays: {
-    sushiList: Array<TypeOneSushiServer>,
-    categories: Array<TypeOneCategoryAndSorting>
-    sortingList: Array<TypeOneCategoryAndSorting>,
-  },
-  currentState: {
-    currentCategory: string
-    currentSorting: string,
-    sortingActivePopup: boolean,
-  },
-  shoppingCart: {
-    cartList: Array<CartOneSushi>,
-    fullOrderPrice: number
-  }
-};
+export interface TypeInitialState {
+  arrays: any,
+  currentState: any,
+  shoppingCart: any
+}
 
 export type TypeOneCategoryAndSorting = {
   id: number,
@@ -63,19 +52,6 @@ export type TypeSortingProps = {
   sortingList: Array<TypeOneCategoryAndSorting>
   toggleSortingActivePopup: any,
   toggleCurrentSorting: any
-}
-
-export type TypeCartButtonProps = {
-  price: number
-  amount: number,
-}
-
-export type SusiListMapStateToProps = {
-  arrays: {
-    sushiList: Array<TypeOneSushiServer>
-  }
-  currentCategory: string,
-  currentSorting: string
 }
 
 export type CartOneSushi = {
