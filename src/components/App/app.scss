@@ -34,3 +34,8 @@ body {
     }
   }
 }
+@media screen and (max-width: 890px) {
+  .app__wrapper {
+    padding: 5rem 4rem;
+  }
+}

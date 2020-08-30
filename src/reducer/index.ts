@@ -1,3 +1,3 @@
-import reduces from "./reducer";
+import reduces from './reducer'
 
 export default reduces;

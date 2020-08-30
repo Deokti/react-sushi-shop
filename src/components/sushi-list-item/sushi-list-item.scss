@@ -60,3 +60,18 @@
     }
   }
 }
+
+@media screen and (max-width: 1120px) {
+  .sushi-list-item {
+    width: 33.3%;
+  }
+  .sushi-list-item__image {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 780px) {
+  .sushi-list-item {
+    width: 50%;
+  }
+
+}

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { withSushiShopService } from "../HOC";
-import { SusiListMapStateToProps, TypeOneSushiServer } from "../../types";
+import { TypeOneSushiServer, TypeSushiListMapToProps } from "../../types";
 import { connect } from "react-redux";
 import SushiListItem from "../sushi-list-item";
 import { compose, filterCategorySushi, sortingSushi } from "../../utils";
@@ -30,8 +30,9 @@ const SushiList: (props: any) => JSX.Element = (props: any) => {
   return <ul className="sushi-list">{ sushiListItem }</ul>
 };
 
-const mapStateToProps = ({ sushiList, currentCategory, currentSorting }: SusiListMapStateToProps) =>
+const mapStateToProps = ({ arrays: { sushiList }, currentState: { currentCategory, currentSorting } }: TypeSushiListMapToProps) =>
   ({ sushiList, currentCategory, currentSorting })
+
 
 const mapDispatchToProps = (dispatch: any, { sushiShopService }: any) => {
   return {

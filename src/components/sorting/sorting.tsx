@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { connect } from "react-redux";
 
 import './sorting.scss';
-import { TypeOneCategoryAndSorting, TypeSortingProps } from "../../types";
+import { TypeOneCategoryAndSorting, TypeSortingMapToProps, TypeSortingProps } from "../../types";
 import { toggleCurrentSorting, toggleSortingActivePopup } from "../../actions/actions";
 
 const Sorting = (props: TypeSortingProps) => {
@@ -56,11 +56,7 @@ const Sorting = (props: TypeSortingProps) => {
   )
 }
 
-const mapStateToProps = ({ sortingActivePopup, currentSorting, sortingList }: {
-  sortingActivePopup: boolean,
-  currentSorting: string,
-  sortingList: Array<TypeOneCategoryAndSorting>
-}) => {
+const mapStateToProps = ({ currentState: { sortingActivePopup, currentSorting }, arrays: { sortingList } }: TypeSortingMapToProps) => {
   return { sortingActivePopup, currentSorting, sortingList };
 }
 

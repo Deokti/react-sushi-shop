@@ -48,7 +48,7 @@ const CartList = ({ cartList, onIncrement, onDecrement, onDelete }: any) => {
 };
 
 
-const mapStateToProps = ({ cartList }: any) => {
+const mapStateToProps = ({ shoppingCart: { cartList } }: any) => {
   return { cartList };
 }
 

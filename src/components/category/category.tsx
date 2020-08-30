@@ -28,7 +28,7 @@ const Category: (props: TypeCategoryProps) => JSX.Element = (props: TypeCategory
   )
 }
 
-const mapStateToProps = ({ categories, currentCategory }: any) => ({ categories, currentCategory });
+const mapStateToProps = ({ arrays: { categories }, currentState: { currentCategory } }: any) => ({ categories, currentCategory });
 const mapDispatchToProps = { toggleCurrentCategory }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
