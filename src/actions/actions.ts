@@ -1,4 +1,4 @@
-import { TypeOneSushiServer } from "../types";
+import { TypeOneSushiServer, TypeRequestService } from "../types";
 
 export const toggleCurrentCategory = (newCategory: string) => {
   return {
@@ -27,3 +27,30 @@ export const toggleCurrentSorting = (newSorting: string) => {
     payload: newSorting,
   }
 }
+
+export const fetchSushi = (sushiShopService: TypeRequestService, dispatch: any) => () => {
+  sushiShopService.getData()
+    .then((data: Array<TypeOneSushiServer>) => dispatch(sushiListLoaded(data)));
+}
+
+export const sushiAddedToCart = (id: number) => {
+  return {
+    type: 'SUSHI_ADDED_TO_CART',
+    payload: id,
+  }
+}
+
+export const sushiRemoveFromCart = (id: number) => {
+  return {
+    type: 'SUSHI_REMOVE_FROM_CART',
+    payload: id,
+  }
+}
+
+export const allSushiRemoveFromCart = (id: number) => {
+  return {
+    type: 'ALL_SUSHI_REMOVE_FROM_CART',
+    payload: id,
+  }
+}
+

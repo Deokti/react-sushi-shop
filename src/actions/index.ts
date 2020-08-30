@@ -1,6 +1,17 @@
-import { toggleCurrentCategory, sushiListLoaded } from './actions';
+import {
+  toggleCurrentCategory,
+  sushiListLoaded,
+  fetchSushi,
+  sushiAddedToCart,
+  sushiRemoveFromCart,
+  allSushiRemoveFromCart,
+} from './actions';
 
 export {
   toggleCurrentCategory,
-  sushiListLoaded
+  sushiListLoaded,
+  fetchSushi,
+  sushiAddedToCart,
+  sushiRemoveFromCart,
+  allSushiRemoveFromCart,
 }

@@ -5,6 +5,8 @@ export type TypeInitialState = {
   sortingList: Array<TypeOneCategoryAndSorting>,
   currentSorting: string,
   sortingActivePopup: boolean,
+  cartList: Array<CartOneSushi>,
+  fullOrderPrice: number
 };
 
 export type TypeOneCategoryAndSorting = {
@@ -28,16 +30,21 @@ export type TypeOneSushiServer = {
   imageUrl: string
   name: string
   popularity: number
-  price: number
+  price: number,
+  onAddedToCart?: any,
 };
 
-export type TypeSushiListProps = {
+export type TypeRequestService = {
   sushiShopService: {
     GET_DATA_URL: string,
     getData(): {
       then(p: (data: TypeOneSushiServer) => any): Array<TypeOneSushiServer>
     }
   },
+  getData(): any;
+}
+
+export type TypeSushiListProps = {
   sushiList: Array<TypeOneSushiServer>,
   sushiListLoaded: any
   currentCategory: string,
@@ -61,4 +68,25 @@ export type SusiListMapStateToProps = {
   sushiList: Array<TypeOneSushiServer>,
   currentCategory: string,
   currentSorting: string
+}
+
+export type CartOneSushi = {
+  buyAmount: number,
+  currency: any,
+  id: number,
+  imageUrl: string,
+  name: string,
+  totalPrice: number
+}
+
+export type TypeCartListItem = {
+  buyAmount: number,
+  currency: string,
+  id: number,
+  imageUrl: string,
+  name: string,
+  totalPrice: number
+  onIncrement: any
+  onDecrement: any
+  onDelete: any
 }

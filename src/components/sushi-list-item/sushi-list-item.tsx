@@ -5,7 +5,7 @@ import {TypeOneSushiServer} from "../../types";
 
 const SushiListItem: React.FC<TypeOneSushiServer> = (
   { amount, composition, currency,
-    imageUrl, name, price
+    imageUrl, name, price, onAddedToCart,
   }) => {
 
   const checkComposition = composition ? (composition.join(', ')).trim() : composition;
@@ -27,7 +27,11 @@ const SushiListItem: React.FC<TypeOneSushiServer> = (
         <span className="sushi-list-item__amount">за {amount} шт</span>
       </h4>
 
-      <button className="sushi-list-item__button">Добавить</button>
+      <button
+        onClick={onAddedToCart}
+        className="sushi-list-item__button">
+          <span>Добавить</span>
+      </button>
     </li>
   )
 };

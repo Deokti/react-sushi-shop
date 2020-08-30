@@ -1,18 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CartListItem from "../cart-list-item";
+import { sushiAddedToCart, allSushiRemoveFromCart, sushiRemoveFromCart } from "../../actions";
 
 import './cart-list.scss';
+import { connect } from "react-redux";
 
-const CartList = () => {
+const CartList = ({ cartList, onIncrement, onDecrement, onDelete }: any) => {
   return (
     <div className="cart-list">
       <h3 className="cart-list__title">Корзина</h3>
 
       <ul className="cart-list-content cart-list-items">
-        <li> <CartListItem /> </li>
-        <li> <CartListItem /> </li>
-        <li> <CartListItem /> </li>
+        {
+          cartList.map((cart: any) => {
+            return <li key={cart.id}>
+              <CartListItem {...cart}
+                            onIncrement={() => onIncrement(cart.id)}
+                            onDecrement={() => onDecrement(cart.id)}
+                            onDelete={() => onDelete(cart.id)} />
+            </li>
+          })
+        }
       </ul>
 
       <div className="cart-list-bottom">
@@ -38,4 +47,17 @@ const CartList = () => {
   );
 };
 
-export default CartList;
+
+const mapStateToProps = ({ cartList }: any) => {
+  return { cartList };
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onIncrement: (id: number) => dispatch(sushiAddedToCart(id)),
+    onDecrement: (id: number) => dispatch(sushiRemoveFromCart(id)),
+    onDelete: (id: number) => dispatch(allSushiRemoveFromCart(id)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartList);
