@@ -3,7 +3,7 @@ import Category from "../category/category";
 import Sorting from "../sorting";
 import SushiList from "../sushi-list/sushi-list";
 
-const ShopPage = () => {
+const ShopPage: React.FC  = () => {
   return (
     <React.Fragment>
       <div className="app-content-top">

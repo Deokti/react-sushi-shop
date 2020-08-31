@@ -4,8 +4,14 @@ import './header.scss';
 import Logo from "../logo";
 import CartButton from "../cart-button";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-const Header: React.FC = () => {
+type HeaderPropsType = {
+  fullOrderPrice: number,
+  fullOrderAmount: number
+}
+
+const Header: React.FC<HeaderPropsType> = ({fullOrderPrice, fullOrderAmount}: HeaderPropsType) => {
   return (
     <header className="header">
       <div className="header__wrapper">
@@ -13,11 +19,22 @@ const Header: React.FC = () => {
           <Logo />
         </Link>
         <Link to='/cart-page' className="header-link">
-          <CartButton price={143} amount={15} />
+          <CartButton price={fullOrderPrice} amount={fullOrderAmount} />
         </Link>
       </div>
     </header>
   );
 }
 
-export default Header;
+type MapStateToPropsState = {
+  shoppingCart: {
+    fullOrderPrice: number
+    fullOrderAmount: number
+  }
+}
+
+const mapStateToProps = ({shoppingCart: {fullOrderPrice, fullOrderAmount}}: MapStateToPropsState) => {
+  return {fullOrderPrice, fullOrderAmount}
+}
+
+export default connect(mapStateToProps)(Header);

@@ -6,6 +6,10 @@
 .cart-list-item__button::after,
 .cart-list-item__button::before,
 .cart-list__button,
-.cart-list__button svg path {
-  transition: all .3s ease-in-out;
+.cart-list__button svg path,
+.cart-list-uncompleted__button,
+.sushi-list-item__in-cart {
+  transition: background-color .3s ease-in-out,
+  color .3s ease-in-out, border .3s ease-in-out,
+  stroke .3s ease-in-out
 }

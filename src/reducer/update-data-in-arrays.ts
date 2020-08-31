@@ -1,6 +1,6 @@
 import { TypeOneCategoryAndSorting, TypeOneSushiServer } from "../types";
 
-type TypeUpdateDataInArrays = {
+type GetDataInArraysType = {
   arrays: {
     sushiList: Array<TypeOneSushiServer>,
     categories: Array<TypeOneCategoryAndSorting>,
@@ -8,7 +8,13 @@ type TypeUpdateDataInArrays = {
   };
 }
 
-const updateDataInArrays = (state: TypeUpdateDataInArrays, actions: any) => {
+type ReturnDataInArraysTypeType = {
+  sushiList: Array<TypeOneSushiServer>;
+  categories: Array<TypeOneCategoryAndSorting>;
+  sortingList: Array<TypeOneCategoryAndSorting>
+}
+
+const updateDataInArrays = (state: GetDataInArraysType, actions: any): ReturnDataInArraysTypeType => {
   if (state === undefined) {
     return {
       sushiList: [],
@@ -23,7 +29,7 @@ const updateDataInArrays = (state: TypeUpdateDataInArrays, actions: any) => {
         { id: 1, name: 'popularity', label: 'популярности' },
         { id: 2, name: 'prices', label: 'цене' },
         { id: 3, name: 'alphabet', label: 'алфавиту' }
-      ],
+      ]
     }
   }
 
@@ -36,7 +42,7 @@ const updateDataInArrays = (state: TypeUpdateDataInArrays, actions: any) => {
     case "CATEGORY_READY":
       return {
         ...state.arrays,
-        category: actions.payload,
+        categories: actions.payload,
       }
 
     default:

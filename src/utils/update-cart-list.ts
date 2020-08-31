@@ -1,6 +1,6 @@
-import { CartOneSushi, TypeOneSushiServer } from "../types";
+import { TypeOneItemInCart, TypeOneSushiServer } from "../types";
 
-export const updateCartList = (cartList: Array<TypeOneSushiServer>, cartItem: CartOneSushi, index: number) => {
+export const updateCartList = (cartList: Array<TypeOneSushiServer>, cartItem: TypeOneItemInCart, index: number) => {
   // Если купленное колличество - это ноль, удалить элемент из массива
   if (cartItem.buyAmount === 0) {
     return [

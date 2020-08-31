@@ -1,6 +1,6 @@
-import { CartOneSushi, TypeOneSushiServer } from "../types";
+import { TypeOneItemInCart, TypeOneSushiServer } from "../types";
 
-export const updateCartItem = (sushi: TypeOneSushiServer, addSushiItem: CartOneSushi, quantity: number) => {
+export const updateCartItem = (sushi: TypeOneSushiServer, addSushiItem: TypeOneItemInCart, quantity: number): TypeOneItemInCart => {
   if (addSushiItem) {
     return {
       ...addSushiItem,
@@ -14,7 +14,8 @@ export const updateCartItem = (sushi: TypeOneSushiServer, addSushiItem: CartOneS
       currency: sushi.currency,
       imageUrl: sushi.imageUrl,
       name: sushi.name,
-      totalPrice: sushi.price
+      totalPrice: sushi.price,
+      composition: sushi.composition
     }
   }
 }

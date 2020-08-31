@@ -1,14 +1,17 @@
 import React from 'react';
 
+import { TypeOneSushiServer } from "../../types";
+
 import './sushi-list-item.scss';
-import {TypeOneSushiServer} from "../../types";
 
 const SushiListItem: React.FC<TypeOneSushiServer> = (
-  { amount, composition, currency,
-    imageUrl, name, price, onAddedToCart,
+  {
+    amount, composition, currency,
+    imageUrl, name, price, onAddedToCart, countInCart
   }) => {
 
   const checkComposition = composition ? (composition.join(', ')).trim() : composition;
+  const checkCount = countInCart !== 0 ? countInCart : '';
 
   return (
     <li className="sushi-list-item">
@@ -29,8 +32,9 @@ const SushiListItem: React.FC<TypeOneSushiServer> = (
 
       <button
         onClick={onAddedToCart}
-        className="sushi-list-item__button">
-          <span>Добавить</span>
+        className="button sushi-list-item__button">
+        <span className="sushi-list-item__main">Добавить</span>
+        {checkCount && <span className="sushi-list-item__in-cart">{checkCount}</span>}
       </button>
     </li>
   )

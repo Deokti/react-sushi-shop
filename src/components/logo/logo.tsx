@@ -3,7 +3,7 @@ import logo from "../../assets/image/logo.png";
 
 import './logo.scss';
 
-const Logo = () => {
+const Logo: React.FC = () => {
   return (
     <div className="logo" title="Перейти на главную страницу">
       <img src={logo} alt="Роллы"/>

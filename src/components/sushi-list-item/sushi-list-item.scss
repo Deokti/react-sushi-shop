@@ -44,6 +44,7 @@
     font-size: 1rem;
   }
   &__button {
+    position: relative;
     margin-top: 1rem;
     width: 100%;
     padding: .9rem 0rem;
@@ -57,7 +58,27 @@
     &:hover {
       background-color: $default-color-element;
       color: #fff;
+      .sushi-list-item__in-cart {
+        background-color: #fff;
+        color: $default-color-element;
+      }
     }
+  }
+  &__in-cart {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: $default-color-element;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.3rem;
   }
 }
 
@@ -73,5 +94,4 @@
   .sushi-list-item {
     width: 50%;
   }
-
 }

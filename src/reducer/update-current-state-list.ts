@@ -1,12 +1,23 @@
-type TypeUpdateCurrentState = {
+type GetUpdateCurrentStateType = {
   currentState: {
     currentCategory: string,
     currentSorting: string,
     sortingActivePopup: boolean,
-  };
+  }
 }
 
-const updateCurrentState = (state: TypeUpdateCurrentState, actions: any) => {
+type ReturnUpdateCurrentStateType = {
+  currentCategory: string,
+  currentSorting: string,
+  sortingActivePopup: boolean,
+}
+
+type Test = {
+  type: string
+  payload: any
+}
+
+const updateCurrentStateList = (state: GetUpdateCurrentStateType, { type, payload }: Test): ReturnUpdateCurrentStateType => {
    if (state === undefined) {
      return {
        currentCategory: 'all',
@@ -15,21 +26,21 @@ const updateCurrentState = (state: TypeUpdateCurrentState, actions: any) => {
      }
    }
 
-  switch (actions.type) {
+  switch (type) {
     case "TOGGLE_CURRENT_CATEGORY":
       return {
         ...state.currentState,
-        currentCategory: actions.payload,
+        currentCategory: payload,
       }
     case "CURRENT_SORTING":
       return {
         ...state.currentState,
-        currentSorting: actions.payload
+        currentSorting: payload
       }
     case "SORTING_ACTIVE_POPUP":
       return {
         ...state.currentState,
-        sortingActivePopup: actions.payload
+        sortingActivePopup: payload
       }
 
     default:
@@ -37,4 +48,4 @@ const updateCurrentState = (state: TypeUpdateCurrentState, actions: any) => {
   }
 }
 
-export default updateCurrentState
+export default updateCurrentStateList

@@ -1,13 +1,11 @@
 import React from "react";
-
 import Header from "../header";
+import ShopPage from "../pages/shop-page";
+import CartPage from "../pages/cart-page";
 
 import { Route } from 'react-router-dom';
 
 import './app.scss';
-
-import ShopPage from "../pages/shop-page";
-import CartPage from "../pages/cart-page";
 
 const App: React.FC = () => {
   return (
