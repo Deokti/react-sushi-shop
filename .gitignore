@@ -7,18 +7,18 @@
 /yarn.lock
 /package-lock.json
 ./package-lock.json
-./firebase.json
-./.firebaserc
-/firebase.json
-/.firebaserc
-/.firebase
+#./firebase.json
+#./.firebaserc
+#/firebase.json
+#/.firebaserc
+#/.firebase
 
 
 # testing
 /coverage
 
 # production
-/build
+#/build
 
 # misc
 .DS_Store
