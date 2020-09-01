@@ -84,7 +84,6 @@ const CartList: React.FC<TypeCartListProps> = (props: TypeCartListProps) => {
   const content = props.cartList.length ? <CompletedShoppingCartItems {...props} /> : null;
   const cartEmpty = !content ? <UncompletedShoppingCartItems /> : null;
 
-
   return (
     <div className="cart-list">
       {content}

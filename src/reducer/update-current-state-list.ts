@@ -3,6 +3,7 @@ type GetUpdateCurrentStateType = {
     currentCategory: string,
     currentSorting: string,
     sortingActivePopup: boolean,
+    mobileActiveMenu: boolean
   }
 }
 
@@ -10,19 +11,16 @@ type ReturnUpdateCurrentStateType = {
   currentCategory: string,
   currentSorting: string,
   sortingActivePopup: boolean,
+  mobileActiveMenu: boolean
 }
 
-type Test = {
-  type: string
-  payload: any
-}
-
-const updateCurrentStateList = (state: GetUpdateCurrentStateType, { type, payload }: Test): ReturnUpdateCurrentStateType => {
+const updateCurrentStateList = (state: GetUpdateCurrentStateType, { type, payload }: any): ReturnUpdateCurrentStateType => {
    if (state === undefined) {
      return {
        currentCategory: 'all',
        currentSorting: 'популярности',
        sortingActivePopup: false,
+       mobileActiveMenu: false
      }
    }
 
@@ -41,6 +39,11 @@ const updateCurrentStateList = (state: GetUpdateCurrentStateType, { type, payloa
       return {
         ...state.currentState,
         sortingActivePopup: payload
+      }
+    case "TOGGLE_MOBILE_ACTIVE_MENU":
+      return {
+        ...state.currentState,
+        mobileActiveMenu: payload,
       }
 
     default:

@@ -1,10 +1,10 @@
 import React from "react";
 
 import './header.scss';
-import Logo from "../logo";
 import CartButton from "../cart-button";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import logo from "../../assets/image/logo.png";
 
 type HeaderPropsType = {
   fullOrderPrice: number,
@@ -15,8 +15,13 @@ const Header: React.FC<HeaderPropsType> = ({fullOrderPrice, fullOrderAmount}: He
   return (
     <header className="header">
       <div className="header__wrapper">
-        <Link to='/' className="header-link">
-          <Logo />
+        <Link to='/' className="logo" title="Перейти на главную страницу">
+          <img src={logo} alt="Роллы"/>
+
+          <div className="logo__description">
+            <h1 className="logo__title">React Sushi</h1>
+            <span className="logo__subtitle">Лучшие суши и роллы </span>
+          </div>
         </Link>
         <Link to='/cart-page' className="header-link">
           <CartButton price={fullOrderPrice} amount={fullOrderAmount} />

@@ -1,10 +1,17 @@
 @import "../../assets/styles/variables";
 
 .sushi-list-item {
-  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 24%;
   min-height: 357px;
-  padding: 19px 30px;
+  padding: 1.9rem 2.5rem;
   margin-bottom: 1rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
   &__image {
     width: 179px;
     height: 179px;
@@ -47,7 +54,7 @@
     position: relative;
     margin-top: 1rem;
     width: 100%;
-    padding: .9rem 0rem;
+    padding: .9rem 0;
     background-color: transparent;
     border: 1px solid $default-color-element;
     border-radius: 3rem;
@@ -81,17 +88,41 @@
     font-size: 1.3rem;
   }
 }
-
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1190px) {
   .sushi-list-item {
-    width: 33.3%;
-  }
-  .sushi-list-item__image {
-    margin: 0 auto;
+    width: 23.8%;
+    padding: 1.9rem 1.2rem;
   }
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1020px) {
+  .sushi-list-item {
+    width: 31%;
+  }
+  .sushi-list-item__button {
+    max-width: 220px;
+  }
+}
+@media screen and (max-width: 740px) {
   .sushi-list-item {
     width: 50%;
+    margin: 0;
+    padding: 1.9rem 8%;
+  }
+}
+@media screen and (max-width: 610px) {
+  .sushi-list-item {
+    padding: 1.9rem 3%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sushi-list-item {
+    width: 100%;
+    padding: 1.9rem 22%;
+  }
+}
+@media screen and (max-width: 410px) {
+  .sushi-list-item {
+    width: 100%;
+    padding: 1.9rem 1rem;
   }
 }

@@ -3,25 +3,28 @@ import { connect } from "react-redux";
 
 import './sorting.scss';
 import { TypeOneCategoryAndSorting } from "../../types";
-import { toggleCurrentSorting, toggleSortingActivePopup } from "../../actions/actions";
+import { toggleCurrentSorting, toggleMobileActiveMenu, toggleSortingActivePopup } from "../../actions/actions";
 
 type TypeSortingProps = {
   sortingActivePopup: boolean
   currentSorting: string
   sortingList: Array<TypeOneCategoryAndSorting>
-  toggleSortingActivePopup: any,
-  toggleCurrentSorting: any
+  toggleSortingActivePopup(state: boolean): void,
+  toggleCurrentSorting(sorting: string): void
+  toggleMobileActiveMenu(currentState: boolean): void
 }
 
 const Sorting: React.FC<TypeSortingProps> = (
   { sortingActivePopup, toggleSortingActivePopup, currentSorting,
-    sortingList, toggleCurrentSorting }: TypeSortingProps) => {
+    sortingList, toggleCurrentSorting, toggleMobileActiveMenu }: TypeSortingProps) => {
 
+  console.log(toggleSortingActivePopup)
   const sortingElementRef = React.createRef<HTMLDivElement>();
   const onToggleStatePopup = () => toggleSortingActivePopup(!sortingActivePopup);
   const onToggleSorting = (event: React.MouseEvent<HTMLLIElement>) => {
-    toggleCurrentSorting(event.currentTarget.dataset.sorting)
+    toggleCurrentSorting(event.currentTarget.dataset.sorting as string)
     toggleSortingActivePopup(false);
+    toggleMobileActiveMenu(false)
   }
 
   const onClickNotSorting = useCallback((event: any) => {
@@ -74,6 +77,6 @@ const mapStateToProps = ({ currentState: { sortingActivePopup, currentSorting },
   return { sortingActivePopup, currentSorting, sortingList };
 }
 
-const mapDispatchToProps = { toggleSortingActivePopup, toggleCurrentSorting }
+const mapDispatchToProps = { toggleSortingActivePopup, toggleCurrentSorting, toggleMobileActiveMenu }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sorting);

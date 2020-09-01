@@ -4,16 +4,19 @@ import { TypeOneCategoryAndSorting } from "../../types";
 import { toggleCurrentCategory } from "../../actions";
 
 import './category.scss';
+import { toggleMobileActiveMenu } from "../../actions/actions";
 
 type TypeCategoryProps = {
   categories: Array<TypeOneCategoryAndSorting>,
   currentCategory: string,
   toggleCurrentCategory(category: string | undefined): void
+  toggleMobileActiveMenu(currentState: boolean): void
 };
 
-const Category: React.FC<TypeCategoryProps> = ({categories, toggleCurrentCategory, currentCategory}: TypeCategoryProps) => {
+const Category: React.FC<TypeCategoryProps> = ({categories, toggleCurrentCategory, currentCategory, toggleMobileActiveMenu}: TypeCategoryProps) => {
   const onCategory = (event: React.MouseEvent<HTMLLIElement>) => {
     toggleCurrentCategory(event.currentTarget.dataset.category);
+    toggleMobileActiveMenu(false);
   }
 
   const templateCategory = categories.map(({id, label, name}: TypeOneCategoryAndSorting) => {
@@ -42,6 +45,6 @@ type TypeCategoryMapToProps = {
 const mapStateToProps = ({arrays: {categories}, currentState: {currentCategory}}: TypeCategoryMapToProps) => {
   return {categories, currentCategory}
 };
-const mapDispatchToProps = {toggleCurrentCategory}
+const mapDispatchToProps = {toggleCurrentCategory, toggleMobileActiveMenu}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

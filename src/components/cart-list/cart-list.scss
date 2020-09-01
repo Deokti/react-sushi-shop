@@ -100,3 +100,46 @@
     }
   }
 }
+
+
+@media (max-width: 940px) {
+  .cart-list {
+    padding: 0;
+  }
+}
+
+@media (max-width: 730px) {
+  .cart-list__title {
+    font-size: 2.7rem;
+  }
+  .cart-list-items {
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .cart-list__button {
+    width: 16.8rem;
+    height: 5rem;
+  }
+  .cart-list__buy {
+    display: block;
+    margin-left: auto;
+    margin-top: 1rem;
+  }
+  .cart-list__price {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .cart-list-bottom{
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .cart-list__back {
+    margin-top: 1rem;
+  }
+}
+
+

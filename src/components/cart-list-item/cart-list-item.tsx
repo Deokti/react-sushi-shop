@@ -32,20 +32,22 @@ const CartListItem: React.FC<TypeCartListItemProps> = (
         </div>
       </div>
 
-      <div className="cart-list-item__counter">
-        <button
-          onClick={onDecrement}
-          className='button cart-list-item__button cart-list-item__button--minus' />
-        <span className="cart-list-item__amount">{buyAmount}</span>
-        <button
-          onClick={onIncrement}
-          className='button cart-list-item__button cart-list-item__button--plus' />
-      </div>
+      <div className="cart-list-item__detailed">
+        <div className="cart-list-item__counter">
+          <button
+            onClick={onDecrement}
+            className='button cart-list-item__button cart-list-item__button--minus' />
+          <span className="cart-list-item__amount">{buyAmount}</span>
+          <button
+            onClick={onIncrement}
+            className='button cart-list-item__button cart-list-item__button--plus' />
+        </div>
 
-      <span className="cart-list-item__price">{totalPrice} {currency}</span>
-      <button
-        onClick={onDelete}
-        className="button cart-list-item__button cart-list-item__button--delete" />
+        <span className="cart-list-item__price">{totalPrice} {currency}</span>
+        <button
+          onClick={onDelete}
+          className="button cart-list-item__button cart-list-item__button--delete" />
+      </div>
     </div>
   );
 };

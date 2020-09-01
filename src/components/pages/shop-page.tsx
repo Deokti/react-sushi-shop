@@ -2,11 +2,18 @@ import React from "react";
 import Category from "../category/category";
 import Sorting from "../sorting";
 import SushiList from "../sushi-list/sushi-list";
+import { connect } from "react-redux";
+import Hamburger from "../hamburger";
 
-const ShopPage: React.FC  = () => {
+type ShopPageProps = {
+  mobileActiveMenu: boolean
+}
+
+const ShopPage: React.FC<ShopPageProps>  = ({ mobileActiveMenu }: ShopPageProps) => {
   return (
     <React.Fragment>
-      <div className="app-content-top">
+      <Hamburger />
+      <div className={`app-content-top ${mobileActiveMenu ? 'app-content-top-mobile' : ''}`}>
         <Category/>
         <Sorting/>
       </div>
@@ -18,4 +25,8 @@ const ShopPage: React.FC  = () => {
   )
 };
 
-export default ShopPage;
+const mapStateToProps = ({ currentState: { mobileActiveMenu } }: { currentState: { mobileActiveMenu: boolean } }) => {
+  return { mobileActiveMenu };
+}
+
+export default connect(mapStateToProps)(ShopPage);

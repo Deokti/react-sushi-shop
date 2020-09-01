@@ -19,6 +19,8 @@ body {
 }
 
 .app {
+  position: relative;
+
   padding: 5rem 1.5rem;
   &__wrapper {
     padding: 5rem 8rem;
@@ -28,15 +30,63 @@ body {
     &-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
     }
     &-bottom {
       padding-top: 4rem;
     }
   }
 }
+
+@media screen and (max-width: 980px) {
+  .app-content-top {
+    align-items: center;
+  }
+}
 @media screen and (max-width: 890px) {
   .app__wrapper {
-    padding: 5rem 4rem;
+    padding: 4rem 3rem;
   }
+}
+@media screen and (max-width: 760px) {
+  .hamburger {
+    display: flex;
+  }
+  .app-content-top {
+    transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    transform: translateX(-140%);
+    left: 0;
+    width: 25%;
+    height: 100vh;
+    top: 0;
+    background-color: $main-background;
+    z-index: 20;
+  }
+  .category {
+    flex-direction: column;
+  }
+  .category-item {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .sorting-selector {
+    top: -9rem;
+    right: -4.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-content-top { width: 60% };
+  .app-content-bottom {
+    padding-top: 0;
+  }
+}
+
+
+.app-content-top-mobile {
+  transform: translateX(0);
 }

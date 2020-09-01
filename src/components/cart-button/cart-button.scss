@@ -36,3 +36,15 @@
     pointer-events: none;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .cart-button {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .cart-button__amount {
+    font-size: 1.6rem;
+  }
+}
